@@ -6,7 +6,7 @@ $dbconn = pg_connect("host=10.254.5.3 dbname=insightdb user=appexternal password
     or die('Could not connect: ' . pg_last_error());
 print "<h1>Auth</h1>";
 // Performing SQL query
-$query = "SELECT * FROM auth WHERE auth_status = 'Failed'";
+$query = "SELECT * FROM auth WHERE auth_status = 'Failed' order by timestamp desc";
 $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
 // Printing results in HTML

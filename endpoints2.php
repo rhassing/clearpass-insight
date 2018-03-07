@@ -1,7 +1,7 @@
 <?php
 
 // Connecting, selecting database
-$dbconn = pg_connect("host=10.31.4.49 dbname=insightdb user=appexternal password=Aruba123!")
+$dbconn = pg_connect("host=10.31.4.49 dbname=insightdb user=appexternal password=eTIPS123")
     or die('Could not connect: ' . pg_last_error());
 $device_category=$_GET["device_category"];
 print "<h1>Endpoints in Category: <u>$device_category</u></h1> <br><br>";

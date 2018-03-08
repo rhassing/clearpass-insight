@@ -1,13 +1,13 @@
 <?php
 
 // Connecting, selecting database
-$dbconn = pg_connect("host=10.31.4.49 dbname=insightdb user=appexternal password=eTIPS123")
+$dbconn = pg_connect("host=10.31.4.49 dbname=tipsdb user=appexternal password=eTIPS123")
     or die('Could not connect: ' . pg_last_error());
 $device_category=$_GET["device_category"];
 print "<h1>Endpoints in Category: <u>$device_category</u></h1> <br><br>";
 
 // Performing SQL query
-$query = "SELECT DISTINCT device_family, device_name FROM endpoints WHERE device_category= '".$device_category."'";
+$query = "SELECT DISTINCT device_family, device_name FROM tips_endpoint_profiles WHERE device_category= '".$device_category."'";
 $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
 // Printing results in HTML
